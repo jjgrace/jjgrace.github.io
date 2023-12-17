@@ -23,9 +23,9 @@ https://jjgrace.github.io/tags/DOTA2/
 https://jjgrace.github.io/tags/ElasticSearch/
 https://jjgrace.github.io/tags/Linux/
 https://jjgrace.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
+https://jjgrace.github.io/tags/MySQL/
 https://jjgrace.github.io/tags/Springboot/
 https://jjgrace.github.io/tags/Java/
-https://jjgrace.github.io/tags/MySQL/
 https://jjgrace.github.io/tags/java/
 https://jjgrace.github.io/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/
 https://jjgrace.github.io/tags/AI/
