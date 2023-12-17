@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>SpringBoot 3.2发布，新特性真香！ | 悩姜</title><meta name="author" content="糊涂-悩姜"><meta name="copyright" content="糊涂-悩姜"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Spring Boot 3.2最近发布了，让我们用 Java 21、GraalVM 和虚拟线程来尝试一下。 Spring Boot 3.2 支持：  Java 21 虚拟线程 原生镜像（自 2022 年 11 月 Spring Boot 3.0 发布以来，Spring Boot 已在生产环境中支持 GraalVM 原生镜像）  Java 21我们期待 2023 年 9 月 19 日发布的 Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot 3.2发布，新特性真香！">
+<meta property="og:url" content="https://jjgrace.github.io/posts/3819568216.html">
+<meta property="og:site_name" content="悩姜">
+<meta property="og:description" content="Spring Boot 3.2最近发布了，让我们用 Java 21、GraalVM 和虚拟线程来尝试一下。 Spring Boot 3.2 支持：  Java 21 虚拟线程 原生镜像（自 2022 年 11 月 Spring Boot 3.0 发布以来，Spring Boot 已在生产环境中支持 GraalVM 原生镜像）  Java 21我们期待 2023 年 9 月 19 日发布的 Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-d6vryl_2560x1440.png">
+<meta property="article:published_time" content="2023-11-28T05:30:15.000Z">
+<meta property="article:modified_time" content="2023-11-28T08:43:12.894Z">
+<meta property="article:author" content="糊涂-悩姜">
+<meta property="article:tag" content="Springboot">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-d6vryl_2560x1440.png"><link rel="shortcut icon" href="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/icon/diqiu.png"><link rel="canonical" href="https://jjgrace.github.io/posts/3819568216"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'SpringBoot 3.2发布，新特性真香！',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-28 16:43:12'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/progress_bar.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/echarts@4.9.0/dist/echarts.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-categories-card@1.0.0/lib/categorybar.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://jwgod-blog.oss-cn-beijing.aliyuncs.com/icon/top1.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home-mian"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-Archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-fenlei-dota"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wangguan"></i><span> 宝库</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movie/"><i class="fa-fw iconfont icon-bilibili"></i><span> 视频</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw iconfont icon-qqyinle"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-naturallinks"></i><span> Link</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-d6vryl_2560x1440.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">悩姜</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-home-mian"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw iconfont icon-Archive"></i><span> 时间线</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw iconfont icon-fenlei-dota"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw iconfont icon-wangguan"></i><span> 宝库</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/movie/"><i class="fa-fw iconfont icon-bilibili"></i><span> 视频</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw iconfont icon-qqyinle"></i><span> 音乐</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw iconfont icon-naturallinks"></i><span> Link</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">SpringBoot 3.2发布，新特性真香！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-28T05:30:15.000Z" title="发表于 2023-11-28 13:30:15">2023-11-28</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-28T08:43:12.894Z" title="更新于 2023-11-28 16:43:12">2023-11-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="SpringBoot 3.2发布，新特性真香！"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Spring Boot 3.2最近发布了，让我们用 Java 21、GraalVM 和虚拟线程来尝试一下。</p>
+<p>Spring Boot 3.2 支持：</p>
+<ul>
+<li>Java 21</li>
+<li>虚拟线程</li>
+<li>原生镜像（自 2022 年 11 月 Spring Boot 3.0 发布以来，Spring Boot 已在生产环境中支持 GraalVM 原生镜像）</li>
+</ul>
+<h2 id="Java-21"><a href="#Java-21" class="headerlink" title="Java 21"></a>Java 21</h2><p>我们期待 2023 年 9 月 19 日发布的 Java 21，Spring Boot 3.2 已经做到完全支持了。</p>
+<p>正如所声明的那样，Java 21 提供了数千项性能、稳定性和安全性改进，包括平台增强功能，可帮助开发人员提高生产力并推动整个组织的创新和增长。</p>
+<h2 id="虚拟线程"><a href="#虚拟线程" class="headerlink" title="虚拟线程"></a>虚拟线程</h2><p>更重要的更新之一是虚拟线程，这是 Project Loom 提供的功能。我们不打算深入细节，官方 JEP 提供了很好的解释：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://openjdk.org/jeps/444">https://openjdk.org/jeps/444</a></p>
+</blockquote>
+<h2 id="GraalVM-和本机镜像"><a href="#GraalVM-和本机镜像" class="headerlink" title="GraalVM 和本机镜像"></a>GraalVM 和本机镜像</h2><p>GraalVM 是一种高性能 JDK，可以使用替代的即时 (JIT) 编译器来加快 Java 和基于 JVM 的应用程序的性能。</p>
+<blockquote>
+<p>Native Image 是一种提前将 Java 代码编译为独立可执行文件（称为本机映像）的技术。该可执行文件包括应用程序类、其依赖项中的类、运行时库类以及来自 JDK 的静态链接本机代码。</p>
+<p>它不在 Java VM 上运行，但包含来自不同运行时系统的必要组件，如内存管理、线程调度等。与 JVM 相比，生成的程序具有更快的启动时间和更低的运行时内存开销。</p>
+</blockquote>
+<h2 id="尝鲜一下"><a href="#尝鲜一下" class="headerlink" title="尝鲜一下"></a>尝鲜一下</h2><p>让我们从安装 Java 21.0.1 graal 开始，最简单的方法是使用SDKMAN 并将其指定为您机器的默认 Java 版本：</p>
+<ul>
+<li>sdk install java 21.0.1-graal</li>
+<li>sdk default java 21.0.1-graal</li>
+</ul>
+<p>另一种安装方法是手动下载</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.graalvm.org/downloads/">https://www.graalvm.org/downloads/</a></p>
+</blockquote>
+<p>我们将使用Spring Initializr页面创建一个新的Spring Boot项目，使用 Spring Boot 3.2.0、Java 21、Gradle-Groovy以及Spring Web和GraalVM本地支持依赖项。</p>
+<p>要在 Spring Boot 3.2 中启用虚拟线程，我们只需在 application.yml 或 application.properties 文件中设置一个属性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.threads.virtual.enabled：true</span><br></pre></td></tr></table></figure>
+
+<p>这个配置起到的作用：</p>
+<ul>
+<li>Tomcat 将使用虚拟线程来处理 HTTP 请求。这意味着处理 Web 请求的应用程序代码（例如控制器中的方法）将在虚拟线程上运行。</li>
+<li>调用@Async方法时，Spring MVC 的异步请求处理和 Spring WebFlux 的阻塞执行支持现在将利用虚拟线程</li>
+<li>标记有@Scheduled的方法将在虚拟线程上运行</li>
+</ul>
+<p>因此，我们将尝试使用这 3 个集成来实现虚拟线程。</p>
+<p>此外，一些特定的集成将在虚拟线程上工作，例如 RabbitMQ&#x2F;Kafka 监听器，以及 Spring Data Redis&#x2F;Apache pulsar 相关的集成。但这些集成超出了本文的范围，有兴趣的可以参考 Spring Boot 3.2 官方示例。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><strong>1.对于 Tomcat 传入的 HTTP 请求，我们创建一个简单的控制器：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping(&quot;/test&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TestController</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> LoggerFactory.getLogger(TestController.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">test</span><span class="params">()</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;Rest controller method has been called &#123;&#125;&quot;</span>, Thread.currentThread());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.异步任务</strong></p>
+<p>我们将在应用程序启动时调用其“run”方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">AsyncTaskExecutorService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> LoggerFactory.getLogger(AsyncTaskExecutorService.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Async</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;Async task method has been called &#123;&#125;&quot;</span>, Thread.currentThread());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.Scheduled 定时任务</strong></p>
+<p>一个简单的方法，每 15 秒调用一次</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SchedulerService</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">Logger</span> <span class="variable">log</span> <span class="operator">=</span> LoggerFactory.getLogger(SchedulerService.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Scheduled(fixedDelayString = &quot;15000&quot;)</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">run</span><span class="params">()</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;Scheduled method has been called &#123;&#125;&quot;</span>, Thread.currentThread());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>让我们运行我们的应用程序：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./gradlew bootRun</span><br></pre></td></tr></table></figure>
+
+<p>并调用我们的端点</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl — location — request GET ‘localhost:8085/test’</span><br></pre></td></tr></table></figure>
+
+<p>我们得到什么：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Starting AppApplication using Java 21.0.1 with PID 38126</span><br><span class="line">Started AppApplication in 1.131 seconds (process running for 1.491)</span><br><span class="line">Async task method has been called VirtualThread[#52,task-1]/runnable@ForkJoinPool-1-worker-5</span><br><span class="line">Scheduled method has been called VirtualThread[#46,scheduling-1]/runnable@ForkJoinPool-1-worker-1</span><br><span class="line">Rest controller method has been called VirtualThread[#62,tomcat-handler-0]/runnable@ForkJoinPool-1-worker-1</span><br><span class="line">Scheduled method has been called VirtualThread[#46,scheduling-1]/runnable@ForkJoinPool-1-worker-1</span><br></pre></td></tr></table></figure>
+
+<p>我们可以看到我们的方法的日志链接到公共 ForkJoinPool 线程池。</p>
+<p>根据JEP：预期行为：</p>
+<p>JDK 的虚拟线程调度程序是一个工作窃取的 ForkJoinPool，它以 FIFO 模式运行。调度程序的并行度是可用于调度虚拟线程的平台线程的数量。</p>
+<p>现在让我们在 GraalVM 上运行它。</p>
+<p>首先，我们需要构建一个 GraalVM 本机映像：（此命令可能需要几分钟）然后运行：（使用您的应用程序的名称而不是“app”）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./gradlew nativeCompile</span><br><span class="line"></span><br><span class="line">./build/native/nativeComplie/app</span><br></pre></td></tr></table></figure>
+
+<p>它也可以工作，并且启动时间要快得多，这符合声明的“与 JVM 相比，生成的程序具有更快的启动时间和更低的运行时内存开销”。</p>
+<p>在这里您可以找到包含本文中使用的代码的存储库来源：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/egor-ponomarev/spring-boot3.2-with-graalvm-virtual-threads-example">https://github.com/egor-ponomarev/spring-boot3.2-with-graalvm-virtual-threads-example</a></p>
+</blockquote>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Spring Boot 3.2 是我们一直在等待的东西！具有虚拟线程的本机映像允许我们编写能够提供与 Go 类似级别的性能和可扩展性的代码，从而保持 JVM 的强大生态系统。</p>
+<p>但是，您必须考虑到并非所有库都已采用其代码来与虚拟线程正常工作（在大多数情况下，它正在用 ReentrantLock 替换“synchronize”块），您应该小心虚拟线程将使用的逻辑。</p>
+<blockquote>
+<p>来源：<a target="_blank" rel="noopener" href="https://medium.com/@egorponomarev">https://medium.com/@egorponomarev</a></p>
+</blockquote>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://jjgrace.github.io">糊涂-悩姜</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://jjgrace.github.io/posts/3819568216.html">https://jjgrace.github.io/posts/3819568216.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://jjgrace.github.io" target="_blank">悩姜</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Springboot/">Springboot</a><a class="post-meta__tags" href="/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-d6vryl_2560x1440.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/115329751.html"><img class="prev-cover" src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-jxl7km_2560x1440.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">一个注解搞定 Springboot 接口防刷</div></div></a></div><div class="next-post pull-right"><a href="/posts/529135365.html"><img class="next-cover" src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-1po9vv_2560x1440.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Elasticsearch查询中的must和should混合使用的行为解析</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/115329751.html" title="一个注解搞定 Springboot 接口防刷"><img class="cover" src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-jxl7km_2560x1440.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-28</div><div class="title">一个注解搞定 Springboot 接口防刷</div></div></a></div><div><a href="/posts/3148420360.html" title="xxl-job实现自动注册"><img class="cover" src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/212bb2f71da94624abb39e5601b8652e.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-06</div><div class="title">xxl-job实现自动注册</div></div></a></div><div><a href="/posts/1355304993.html" title="私有OSS仓库实现图片预览"><img class="cover" src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-rrev8m_2560x1440.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-30</div><div class="title">私有OSS仓库实现图片预览</div></div></a></div><div><a href="/posts/2093696935.html" title="浅析Spring框架"><img class="cover" src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/efa558ae95e74095a2bc1307fd12c103.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-07</div><div class="title">浅析Spring框架</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://jwgod-blog.oss-cn-beijing.aliyuncs.com/icon/top1.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">糊涂-悩姜</div><div class="author-info__description">聪明难，糊涂难，由聪明入糊涂更难</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://jwgod.com"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">唯天下之至拙，能胜天下之至巧。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Java-21"><span class="toc-number">1.</span> <span class="toc-text">Java 21</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E7%BA%BF%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">虚拟线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GraalVM-%E5%92%8C%E6%9C%AC%E6%9C%BA%E9%95%9C%E5%83%8F"><span class="toc-number">3.</span> <span class="toc-text">GraalVM 和本机镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%9D%E9%B2%9C%E4%B8%80%E4%B8%8B"><span class="toc-number">4.</span> <span class="toc-text">尝鲜一下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">5.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/1355304993.html" title="私有OSS仓库实现图片预览"><img src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-rrev8m_2560x1440.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="私有OSS仓库实现图片预览"/></a><div class="content"><a class="title" href="/posts/1355304993.html" title="私有OSS仓库实现图片预览">私有OSS仓库实现图片预览</a><time datetime="2023-11-30T07:26:48.000Z" title="发表于 2023-11-30 15:26:48">2023-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3265730413.html" title="mysql 删除重复数据"><img src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-858ly1_2560x1440.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mysql 删除重复数据"/></a><div class="content"><a class="title" href="/posts/3265730413.html" title="mysql 删除重复数据">mysql 删除重复数据</a><time datetime="2023-11-29T07:18:52.000Z" title="发表于 2023-11-29 15:18:52">2023-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/115329751.html" title="一个注解搞定 Springboot 接口防刷"><img src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-jxl7km_2560x1440.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一个注解搞定 Springboot 接口防刷"/></a><div class="content"><a class="title" href="/posts/115329751.html" title="一个注解搞定 Springboot 接口防刷">一个注解搞定 Springboot 接口防刷</a><time datetime="2023-11-28T05:58:01.000Z" title="发表于 2023-11-28 13:58:01">2023-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3819568216.html" title="SpringBoot 3.2发布，新特性真香！"><img src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-d6vryl_2560x1440.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringBoot 3.2发布，新特性真香！"/></a><div class="content"><a class="title" href="/posts/3819568216.html" title="SpringBoot 3.2发布，新特性真香！">SpringBoot 3.2发布，新特性真香！</a><time datetime="2023-11-28T05:30:15.000Z" title="发表于 2023-11-28 13:30:15">2023-11-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/529135365.html" title="Elasticsearch查询中的must和should混合使用的行为解析"><img src="https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-1po9vv_2560x1440.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Elasticsearch查询中的must和should混合使用的行为解析"/></a><div class="content"><a class="title" href="/posts/529135365.html" title="Elasticsearch查询中的must和should混合使用的行为解析">Elasticsearch查询中的must和should混合使用的行为解析</a><time datetime="2023-11-27T06:27:26.000Z" title="发表于 2023-11-27 14:27:26">2023-11-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 糊涂-悩姜</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script src="/js/custom.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 380px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 320px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-3l7eoy_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/游戏/">游戏</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">技术</span></li><li class="categoryBar-list-item" style="background:url(https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-d6vqzg_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/NoSql/">NoSql</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">游戏</span></li><li class="categoryBar-list-item" style="background:url(https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-we3rox_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/技术/">技术</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr">数据库</span></li><li class="categoryBar-list-item" style="background:url(https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-rrez3j_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/数据库/">数据库</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr">毒鸡汤</span></li><li class="categoryBar-list-item" style="background:url(https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-vq2rx3_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/个人空间/">个人空间</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">NoSql</span></li><li class="categoryBar-list-item" style="background:url(https://fx-blog-images.oss-cn-beijing.aliyuncs.com/background/wallhaven-d6vqxo_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/毒鸡汤/">毒鸡汤</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">个人空间</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '7c9d8475c43d4b52a54565128446c1b0';
+  var gaud_map_key = '283f0dc359a1cfd3ac30e069bcb115c3';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '116.46371,39.99882';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title=""><img src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title=""><img src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://dashboard.4everland.org/" style="margin-inline:5px" title=""><img alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title=""><img src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" title=""><img src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://npm.elemecdn.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.js"></script><!-- hexo injector body_end end --></body></html>
