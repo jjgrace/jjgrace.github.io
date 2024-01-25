@@ -1,8 +1,4 @@
-/*@import "//at.alicdn.com/t/c/font_4315032_teuezq35tqm.css";*/
-
-/* 容器图标*/
-@import "//at.alicdn.com/t/c/font_4423403_w2ozcbj79jp.css";
-
+@import "//at.alicdn.com/t/c/font_4315032_teuezq35tqm.css";
 /* 页脚与头图透明 */
 #footer {
   background: transparent !important;
@@ -426,16 +422,4 @@ h6::before {
   color: var(--theme-color);
   -webkit-animation: ccc 6s linear infinite;
   animation: ccc 6s linear infinite;
-}
-
-/* 小冰分类分类磁铁黑夜模式适配 */
-/* 一般状态 */
-[data-theme="dark"] .magnet_link_context {
-  background: #1e1e1e;
-  color: antiquewhite;
-}
-/* 鼠标悬浮状态 */
-[data-theme="dark"] .magnet_link_context:hover {
-  background: #3ecdf1;
-  color: #f2f2f2;
 }
