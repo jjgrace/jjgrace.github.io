@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>mysql组复制集群之节点被逐出情况</title>
+      <link href="/posts/4227980569.html"/>
+      <url>/posts/4227980569.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="mysql组复制集群之节点被逐出情况分析"><a href="#mysql组复制集群之节点被逐出情况分析" class="headerlink" title="mysql组复制集群之节点被逐出情况分析"></a>mysql组复制集群之节点被逐出情况分析</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql组复制集群之节点被逐出情况,可能是网络抖动导致，Mysql 8.0.13版本引入 集群网络延迟容错参数group_replication_member_expel_timeout 8.0.21版本默认为5,意味着在5秒钟的检测时间后如果该节点还是不正常，那会在等5秒钏，如果可疑成员还是不正常，超过这个时间将被驱逐。（在产生怀疑之前的最初5秒检测时间不计入该时间）。</span><br></pre></td></tr></table></figure><h1 id="恢复可疑成员的方法"><a href="#恢复可疑成员的方法" class="headerlink" title="恢复可疑成员的方法"></a>恢复可疑成员的方法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">1. 备份数据库文件</span></span><br><span class="line">mysqldump -h 192.168.1.xx -P 3306 -uroot -pxxxx2023!  --single-transaction --master-data=2 --flush-logs --flush-privileges --events --routines --all-databases &gt; all_backup.sql</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">2.在可疑成员库上停止加入MGR集群</span></span><br><span class="line">stop group_replication;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">3. 备库重置gtid_executed</span></span><br><span class="line">reset master;</span><br><span class="line">show global variables like &#x27;%gtid%&#x27;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">4. 设置可读写</span></span><br><span class="line">set global super_read_only=OFF;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">5. 恢复数据</span></span><br><span class="line">mysql  -h 192.168.1.xx -P 3306 -uroot -pxxxx2023!  &lt;/home/sql_bak/all_databases-202312212350.sql</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">6. 加入MGR集群</span></span><br><span class="line">start group_replication;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">7. 设置只读</span></span><br><span class="line">show global variables like &#x27;super%&#x27;;</span><br><span class="line">set global super_read_only=ON;  #加入MGR集群后为只读状态</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">8. 查看集群状态</span></span><br><span class="line">SELECT * FROM performance_schema.replication_group_members;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 数据库 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>efk收集nginx日志</title>
       <link href="/posts/989019294.html"/>
       <url>/posts/989019294.html</url>
