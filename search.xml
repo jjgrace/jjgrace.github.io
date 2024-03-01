@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Python实现mysql主从监控脚本</title>
+      <link href="/posts/725244789.html"/>
+      <url>/posts/725244789.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python实现mysql主从监控脚本"><a href="#Python实现mysql主从监控脚本" class="headerlink" title="Python实现mysql主从监控脚本"></a>Python实现mysql主从监控脚本</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> MySQLdb</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> mail163</span><br><span class="line"></span><br><span class="line">now=time.strftime(<span class="string">&quot;%Y/%m/%d-%H:%M:%S&quot;</span>,time.localtime())</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Mydb</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span> (self,host,user,port,passwd,sock):</span><br><span class="line">        self.host=host</span><br><span class="line">        self.user=user</span><br><span class="line">        self.port=port</span><br><span class="line">        self.passwd=passwd</span><br><span class="line">        self.sock=sock</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            self.db=MySQLdb.connect(host=self.host,user=self.user,port=self.port,passwd=self.passwd,unix_socket=self.sock)</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            <span class="built_in">print</span> <span class="string">&quot;cann&#x27;t connect to mysql server %s %s &quot;</span>%(self.host,self.port)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.cursor=self.db.cursor()</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_slave</span>(<span class="params">self</span>):</span><br><span class="line">        self.cursor.execute(<span class="string">&#x27; show slave status ;&#x27;</span>)</span><br><span class="line">        slave=self.cursor.fetchall()</span><br><span class="line">        <span class="keyword">return</span> slave</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">check_status</span> (self):</span><br><span class="line">        slave=self.get_slave()</span><br><span class="line">        <span class="keyword">if</span> (slave[<span class="number">0</span>])[<span class="number">10</span>]!=<span class="string">&#x27;Yes&#x27;</span> <span class="keyword">or</span> (slave[<span class="number">0</span>])[<span class="number">11</span>]!=<span class="string">&#x27;Yes&#x27;</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;stop&#x27;</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&#x27;running&#x27;</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">close</span>(<span class="params">self</span>):</span><br><span class="line">        self.cursor.close()</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span> ():</span><br><span class="line">    db=Mydb(<span class="string">&#x27;localhost&#x27;</span>,<span class="string">&#x27;root&#x27;</span>,<span class="number">3306</span>,<span class="string">&#x27;JD#mysql87##&#x27;</span>,<span class="string">&#x27;/var/lib/mysql/mysql.sock&#x27;</span>)</span><br><span class="line">    status=db.check_status()</span><br><span class="line">    <span class="built_in">print</span> status</span><br><span class="line">    <span class="keyword">if</span> status==<span class="string">&#x27;stop&#x27;</span>:</span><br><span class="line">        mail163.mail(<span class="string">&#x27;64.88 slave down at %s&#x27;</span>%(now))</span><br><span class="line">    db.close()</span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 脚本 </category>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mysql slave state </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python同步图片脚本</title>
       <link href="/posts/1052778464.html"/>
       <url>/posts/1052778464.html</url>
