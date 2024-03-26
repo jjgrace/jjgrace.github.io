@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>docker_deploy.sh</title>
+      <link href="/posts/578562185.html"/>
+      <url>/posts/578562185.html</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.告知目标服务器拉取哪个镜像</span><br><span class="line">2.判断当前服务器是否正在运行容器，需要删除</span><br><span class="line">3.如果目标服务器已经存在当前镜像，需要删除</span><br><span class="line">4.目标服务器拉取harbor上的镜像</span><br><span class="line">5.将拉取下来的镜像运行成容器</span><br></pre></td></tr></table></figure><h1 id="docker-deploy-脚本"><a href="#docker-deploy-脚本" class="headerlink" title="docker deploy 脚本"></a>docker deploy 脚本</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">deploy.sh</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#### by jwgod</span></span> </span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">#### deploy 192.168.64.xx:5000 repo mytest v1.0.0 8080:8081</span></span></span><br><span class="line"></span><br><span class="line">harbor_addr=$1</span><br><span class="line">harbor_repo=$2</span><br><span class="line">project=$3</span><br><span class="line">version=$4</span><br><span class="line">container_port=$5</span><br><span class="line">host_port=$6</span><br><span class="line"></span><br><span class="line">imageName=$haobor_addr/$haobor_repo/$project:$version</span><br><span class="line"></span><br><span class="line">echo $imageName</span><br><span class="line"></span><br><span class="line">containerId=`docker ps -a |grep $&#123;project&#125; | awk &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line"></span><br><span class="line">echo $containerId</span><br><span class="line"></span><br><span class="line">if [ &quot;$containerId&quot; != &quot;&quot; ]; then</span><br><span class="line">    docker stop $containerId</span><br><span class="line">    docker rm $containerId</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">tag=`docker images | grep $&#123;project&#125; | awk &#x27;&#123;print $2&#125;&#x27;`</span><br><span class="line">echo $tag</span><br><span class="line"></span><br><span class="line">if [[ &quot;$tag&quot; =~ &quot;$version&quot; ]]; then</span><br><span class="line">    docker rmi $imageName</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">docker login -u admin -p Harbor12345 $haobor_addr</span><br><span class="line"></span><br><span class="line">docker pull $imageName</span><br><span class="line"></span><br><span class="line">docker run -d -p $host_port:$container_port --name $project $imageName</span><br><span class="line"></span><br><span class="line">echo &quot;SUCCESS&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 脚本 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Shell </tag>
+            
+            <tag> docker deploy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Kubernetes(K8s 1.27.x) 快速上手与实践</title>
       <link href="/posts/3659440963.html"/>
       <url>/posts/3659440963.html</url>
