@@ -67,8 +67,6 @@
       
       <categories>
           
-          <category> 数据库 </category>
-          
           <category> 容器 </category>
           
       </categories>
@@ -188,9 +186,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> gitlab </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
