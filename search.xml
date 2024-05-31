@@ -20,7 +20,9 @@
       
         <tags>
             
-            <tag> 文件存储 </tag>
+            <tag> etcd </tag>
+            
+            <tag> k8s-master </tag>
             
         </tags>
       
