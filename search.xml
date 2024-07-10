@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>s3cmd工具使用</title>
+      <link href="/posts/2793307198.html"/>
+      <url>/posts/2793307198.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="对象存储及nfs"><a href="#对象存储及nfs" class="headerlink" title="对象存储及nfs"></a>对象存储及nfs</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对象存储信服云内访问地址oss.clouds.cn  https端口1200 http端口1201</span><br></pre></td></tr></table></figure><h2 id="1-安装s3cmd-工具"><a href="#1-安装s3cmd-工具" class="headerlink" title="1 安装s3cmd 工具"></a>1 安装s3cmd 工具</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装 s3cmd</span></span><br><span class="line">cd /home/s3cmd</span><br><span class="line">pipenv shell</span><br><span class="line">pip install s3cmd -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com</span><br><span class="line">s3cmd --version  # s3cmd version 2.3.0</span><br><span class="line"></span><br><span class="line">s3cmd --configure  #可随便填写，生成文件</span><br><span class="line"></span><br><span class="line">vim ~/.s3cfg</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="2-s3cmd-工具批量导入图片"><a href="#2-s3cmd-工具批量导入图片" class="headerlink" title="2 s3cmd 工具批量导入图片"></a>2 s3cmd 工具批量导入图片</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上传目录</span></span><br><span class="line">s3cmd put -r files-20231122/ s3://5-test-data</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">单个下载：</span></span><br><span class="line">s3cmd get s3://5-test-data/image/20231117033759/IMG_20231117_150022.jpg</span><br></pre></td></tr></table></figure><h2 id="3-s3cmd-常用命令"><a href="#3-s3cmd-常用命令" class="headerlink" title="3 s3cmd 常用命令"></a>3 s3cmd 常用命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">列举所有buckets(bucket相当于根文件夹)</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">s3cmd <span class="built_in">ls</span></span></span><br><span class="line">2023-11-24 06:51  s3://5-test-data</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看某个bucket中的内容</span></span><br><span class="line">s3cmd ls s3://5-test-data</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上传目录</span></span><br><span class="line">s3cmd put -r files-20231122/ s3://5-test-data</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建bucket(bucket名称唯一，不能重复)</span></span><br><span class="line">s3cmd mb s3://&#123;$BUCKETNAME&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">删除空bucket</span></span><br><span class="line">s3cmd rb s3://&#123;$BUCKETNAME&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">支持删除多个文件</span></span><br><span class="line">s3cmd del s3://bucket/filename s3://bucket/filenam2</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上传一个文件到bucket</span></span><br><span class="line">s3cmd put filename s3://bucket-name/filename</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上传多个文件</span></span><br><span class="line">s3cmd put filename*s3://bucket-name/ #注意只写bucket名称</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">上传制定文件前缀</span></span><br><span class="line">s3cmd put--force filename*s3://bucket-name/prefixed:</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">下载一个文件从bucket</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">单个下载：</span></span><br><span class="line">s3cmd get s3://bucket/filename</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">批量下载</span></span><br><span class="line">s3cmd get s3://bucket/filename1 s3://bucket/filename2</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> s3cmd </tag>
+            
+            <tag> 对象存储 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>k8s证书续签</title>
       <link href="/posts/870400327.html"/>
       <url>/posts/870400327.html</url>
@@ -481,9 +508,9 @@
       
         <tags>
             
-            <tag> git </tag>
-            
             <tag> gitlab </tag>
+            
+            <tag> git </tag>
             
         </tags>
       
