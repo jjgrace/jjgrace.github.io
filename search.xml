@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>open-webui之ollama</title>
+      <link href="/posts/2024908693.html"/>
+      <url>/posts/2024908693.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>open-webui之ollama</title>
+      <link href="/posts/2024908694.html"/>
+      <url>/posts/2024908694.html</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">  <script id="hbeData" type="hbeData" data-hmacdigest="faa5bd65d7d79ab60dce9a84aeeff5163d7760b98896124519ff08520bce4184">d5b5e94e8ccafdcc787d294b74a096cbfbd554982e01af8e029ecd6742e1661bd3d94183036a22ac686c39cfdb7556459e924c81133ce6f3fbb99c8e08971e4feed9fc731d1b650b8209d6545cb05e0dde7492c6736cc182d42a033ea500703c91b51d12ba2f5ee01da3fc6f52d64982e5d853e8eaf21472d78e48498e129c59f2137af881bbdc6065dff42b1d92af870b17cf3060c06004ce70e870b3ddc3aba28d416548cea099c933a9a5802d09b336ea77b37cf59bcd7272123a2e494172c1ce8d918f9c49db53aa9d365f032c27</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-surge">      <input class="hbe hbe-input-field hbe-input-field-surge" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-surge" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-surge" data-content="您好, 这里需要密码.">您好, 这里需要密码.</span>      </label>      <svg class="hbe hbe-graphic hbe-graphic-surge" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">        <path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"></path>      </svg>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> AI </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Open-webui </tag>
+            
+            <tag> JOllama </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>tcpdump抓包分析</title>
       <link href="/posts/1891758577.html"/>
       <url>/posts/1891758577.html</url>
