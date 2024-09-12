@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> RAG </category>
+          <category> AI </category>
           
       </categories>
       
@@ -63,12 +63,14 @@
       
       <categories>
           
-          <category> SD </category>
+          <category> AI </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> SD </tag>
             
             <tag> Stable-diffusion </tag>
             
