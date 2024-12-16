@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>指标-MACD的多空应用</title>
+      <link href="/posts/584561845.html"/>
+      <url>/posts/584561845.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>指标-MACD的多空应用</p></blockquote><h1 id="指标-MACD的多空应用"><a href="#指标-MACD的多空应用" class="headerlink" title="指标-MACD的多空应用"></a>指标-MACD的多空应用</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">快慢线在0轴之上，多头占主角，出现的绿柱堆叫做空头的反抗，消灭了空头的有生力量之后，股份就有可能继续上行。</span><br><span class="line">股份是不继续上午，就要看增量资金有没有来。</span><br><span class="line"></span><br><span class="line">以大盘为例：</span><br><span class="line">1.方框1处的空头反抗被多头消灭了，股价继续上行，但观察量能没有放大，增量资金没有来，所以我们可以在A处选择离开。</span><br><span class="line">2.方框2处的空头继续反抗，而且绿柱比方框1处的绿柱要大，所以后面的空头衰竭后要继续上行，就需要比前面的量能更大(需要能够消化掉空头的量能)，出现分歧后回踩继续放大，才能继续支撑股价上行。明显此处增量资金也没有来，所以在B处我们可以选择离开。</span><br><span class="line">3.如果方框2处的绿柱比方框1处的绿柱小，则就不需要大的阳线(平的梯度量能就可)去支撑股价上行</span><br></pre></td></tr></table></figure><p><img src="https://jwgod-blog.oss-cn-beijing.aliyuncs.com/blog/image-20241215174410964.png" alt="image-20241215174410964"></p><h2 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.方框1处的空头反抗被多头消灭了，股价继续上行，但观察量能没有放大吃掉前后的a处的量，增量资金没有来，所以我们可以在A处选择离开。</span><br><span class="line">2.方框2处的空头继续反抗，而且绿柱比方框1处的绿柱要大，所以后面的空头衰竭后要继续上行，就需要比前面的量能更大(c处的量能超过了前面的a,b处的量，在这里是补量消化空头)，所以能够支撑股价上行，出现分歧后回踩5日线需要继续放大，才能继续支撑股价上行。明显此处增量资金也没有来，所以在B处我们可以选择离开（在这里需要观察阴线量能是否衰竭，如果放大则B处一定要离开，而此处可以先拿着再观察一天，能否站上5日线）。</span><br><span class="line"></span><br><span class="line">注意：在C上量能放大突破处不能去追，我们在回踩5日均线时可介入。消灭了空头的有生力量之后，股份就有可能继续上行。</span><br></pre></td></tr></table></figure><p><img src="https://jwgod-blog.oss-cn-beijing.aliyuncs.com/blog/image-20241215175820211.png" alt="image-20241215175820211"></p><h2 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.方框1处的空头反抗被多头消灭了，股价继续上行，量能放大，有增量资金来，所以我们在A处回踩5日线选择介入。</span><br><span class="line">2.方框2处的空头继续反抗，但是没有绿柱出现，阴线的量能也是缩小，所以能够支撑股价上行，在此处虽然破了5日线，我们会选择持股不动。</span><br><span class="line">3.当消化掉空头力量后，出现的量能放大的情况，并且重新站上5日线，可在此处进行加仓。</span><br><span class="line">4.在出现最高价的大阴线时选择离开，最差也要在B处离开。</span><br></pre></td></tr></table></figure><p><img src="https://jwgod-blog.oss-cn-beijing.aliyuncs.com/blog/image-20241215181036535.png" alt="image-20241215181036535"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 财富 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MACD </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Go接口interface</title>
       <link href="/posts/3485333638.html"/>
       <url>/posts/3485333638.html</url>
@@ -895,9 +920,9 @@
       
         <tags>
             
-            <tag> gitlab </tag>
-            
             <tag> git </tag>
+            
+            <tag> gitlab </tag>
             
         </tags>
       
@@ -1608,19 +1633,6 @@
             <tag> 操作系统 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/posts/0.html"/>
-      <url>/posts/0.html</url>
-      
-        <content type="html"><![CDATA[<figure class="highlight plaintext"><figcaption><span>1990-1999年十首金曲分享</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: 指标-MACD的多空应用</span><br><span class="line">categories:</span><br><span class="line">  - 财富</span><br><span class="line">tags:</span><br><span class="line">  - MACD</span><br><span class="line">cover: &#x27;https://jwgod-blog.oss-cn-beijing.aliyuncs.com/background/blog-5.jpg&#x27;</span><br><span class="line">swiper_index: 7</span><br><span class="line"></span><br></pre></td></tr></table></figure><blockquote><p>指标-MACD的多空应用</p></blockquote><h1 id="指标-MACD的多空应用"><a href="#指标-MACD的多空应用" class="headerlink" title="指标-MACD的多空应用"></a>指标-MACD的多空应用</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">快慢线在0轴之上，多头占主角，出现的绿柱堆叫做空头的反抗，消灭了空头的有生力量之后，股份就有可能继续上行。</span><br><span class="line">股份是不继续上午，就要看增量资金有没有来。</span><br><span class="line"></span><br><span class="line">以大盘为例：</span><br><span class="line">1.方框1处的空头反抗被多头消灭了，股价继续上行，但观察量能没有放大，增量资金没有来，所以我们可以在A处选择离开。</span><br><span class="line">2.方框2处的空头继续反抗，而且绿柱比方框1处的绿柱要大，所以后面的空头衰竭后要继续上行，就需要比前面的量能更大(需要能够消化掉空头的量能)，出现分歧后回踩继续放大，才能继续支撑股价上行。明显此处增量资金也没有来，所以在B处我们可以选择离开。</span><br><span class="line">3.如果方框2处的绿柱比方框1处的绿柱小，则就不需要大的阳线(平的梯度量能就可)去支撑股价上行</span><br></pre></td></tr></table></figure><p><img src="C:\Users\jiang\AppData\Roaming\Typora\typora-user-images\image-20241215174410964.png" alt="image-20241215174410964"></p><h2 id="例子1"><a href="#例子1" class="headerlink" title="例子1"></a>例子1</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.方框1处的空头反抗被多头消灭了，股价继续上行，但观察量能没有放大吃掉前后的a处的量，增量资金没有来，所以我们可以在A处选择离开。</span><br><span class="line">2.方框2处的空头继续反抗，而且绿柱比方框1处的绿柱要大，所以后面的空头衰竭后要继续上行，就需要比前面的量能更大(c处的量能超过了前面的a,b处的量，在这里是补量消化空头)，所以能够支撑股价上行，出现分歧后回踩5日线需要继续放大，才能继续支撑股价上行。明显此处增量资金也没有来，所以在B处我们可以选择离开（在这里需要观察阴线量能是否衰竭，如果放大则B处一定要离开，而此处可以先拿着再观察一天，能否站上5日线）。</span><br><span class="line"></span><br><span class="line">注意：在C上量能放大突破处不能去追，我们在回踩5日均线时可介入。消灭了空头的有生力量之后，股份就有可能继续上行。</span><br></pre></td></tr></table></figure><p><img src="C:\Users\jiang\AppData\Roaming\Typora\typora-user-images\image-20241215175820211.png" alt="image-20241215175820211"></p><h2 id="例子2"><a href="#例子2" class="headerlink" title="例子2"></a>例子2</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.方框1处的空头反抗被多头消灭了，股价继续上行，量能放大，有增量资金来，所以我们在A处回踩5日线选择介入。</span><br><span class="line">2.方框2处的空头继续反抗，但是没有绿柱出现，阴线的量能也是缩小，所以能够支撑股价上行，在此处虽然破了5日线，我们会选择持股不动。</span><br><span class="line">3.当消化掉空头力量后，出现的量能放大的情况，并且重新站上5日线，可在此处进行加仓。</span><br><span class="line">4.在出现最高价的大阴线时选择离开，最差也要在B处离开。</span><br></pre></td></tr></table></figure><p><img src="C:\Users\jiang\AppData\Roaming\Typora\typora-user-images\image-20241215181036535.png" alt="image-20241215181036535"></p>]]></content>
-      
-      
       
     </entry>
     
