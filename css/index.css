@@ -209,7 +209,6 @@ template {
   -webkit-box-orient: vertical;
 }
 .fontawesomeIcon,
-#post .post-copyright:before,
 #post .post-outdate-notice:before {
   display: inline-block;
   font-weight: 600;
