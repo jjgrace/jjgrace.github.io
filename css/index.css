@@ -208,7 +208,15 @@ template {
   overflow: hidden;
   -webkit-box-orient: vertical;
 }
-.fontawesomeIcon {
+.fontawesomeIcon,
+#article-container.post-content h1:before,
+#article-container.post-content h2:before,
+#article-container.post-content h3:before,
+#article-container.post-content h4:before,
+#article-container.post-content h5:before,
+#article-container.post-content h6:before,
+#post .post-copyright:before,
+#post .post-outdate-notice:before {
   display: inline-block;
   font-weight: 600;
   font-family: 'Font Awesome 6 Free';

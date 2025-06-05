@@ -120,9 +120,9 @@
       
         <tags>
             
-            <tag> K8s </tag>
-            
             <tag> DeepSeek </tag>
+            
+            <tag> K8s </tag>
             
         </tags>
       
@@ -1326,9 +1326,9 @@
       
         <tags>
             
-            <tag> gitlab </tag>
-            
             <tag> git </tag>
+            
+            <tag> gitlab </tag>
             
         </tags>
       
