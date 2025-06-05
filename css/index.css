@@ -208,8 +208,7 @@ template {
   overflow: hidden;
   -webkit-box-orient: vertical;
 }
-.fontawesomeIcon,
-#post .post-outdate-notice:before {
+.fontawesomeIcon {
   display: inline-block;
   font-weight: 600;
   font-family: 'Font Awesome 6 Free';
